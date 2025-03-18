@@ -1,26 +1,76 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+import { Theme } from "@/interfaces/theme";
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+const lightColors = {
+  text: "#080708",
+  subtext: "#A8A8A8",
+  background: "#F7F7F7",
+  danger: "#BF616A",
+  light_error: "#FF6E81",
+  success: "#81C784",
+  input: "#D9D9D9",
+  info: "#28BEF5",
+  card: "#F7F7F7",
+  placeholder: "#303539",
+  icon: "#505050",
+  warning: "#F7CB73",
+  primary: "#FC7124",
+  border: "#FC7124",
+};
 
-export const Colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
-  },
+const darkColors = {
+  text: "#080708",
+  subtext: "#A8A8A8",
+  background: "#F7F7F7",
+  danger: "#BF616A",
+  light_error: "#FF6E81",
+  success: "#81C784",
+  input: "#D9D9D9",
+  info: "#28BEF5",
+  card: "#F7F7F7",
+  placeholder: "#303539",
+  icon: "#505050",
+  warning: "#F7CB73",
+  primary: "#FC7124",
+  border: "#FC7124",
+};
+
+export const themes: Theme = {
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    colors: {
+      background: darkColors.background,
+      text: darkColors.text,
+      border: darkColors.border,
+      card: darkColors.card,
+      danger: darkColors.danger,
+      light_error: darkColors.light_error,
+      icon: darkColors.icon,
+      info: darkColors.info,
+      input: darkColors.input,
+      placeholder: darkColors.placeholder,
+      primary: darkColors.primary,
+      subtext: darkColors.subtext,
+      success: darkColors.success,
+      warning: darkColors.warning,
+    },
+    dark: true,
+  },
+  light: {
+    colors: {
+      background: lightColors.background,
+      text: lightColors.text,
+      border: lightColors.border,
+      card: lightColors.card,
+      danger: lightColors.danger,
+      light_error: lightColors.light_error,
+      icon: lightColors.icon,
+      info: lightColors.info,
+      input: lightColors.input,
+      placeholder: lightColors.placeholder,
+      primary: lightColors.primary,
+      subtext: lightColors.subtext,
+      success: lightColors.success,
+      warning: lightColors.warning,
+    },
+    dark: false,
   },
 };
