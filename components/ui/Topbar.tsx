@@ -15,6 +15,7 @@ import useTheme from "@/hook/useTheme";
 import { taskSelector } from "@/store/Slice/TaskSlice";
 import { SCREEN_NAME, SCREEN_TITLE } from "@/enums/Screens";
 import LocalizationService from "@/utils/LocalizationService";
+import { router } from "expo-router";
 
 const Topbar: React.FC<NativeStackHeaderProps> = ({
   navigation,
@@ -32,7 +33,7 @@ const Topbar: React.FC<NativeStackHeaderProps> = ({
   const taskCount = useMemo(() => taskList.length, [taskList]);
 
   const onAddPress = useCallback(() => {
-    navigation.navigate(SCREEN_NAME.ADD_TASK);
+    router.navigate("/AddTaskScreen");
   }, [navigation]);
 
   const paddingTop = Platform.OS === "ios" ? insets.top : insets.top * 2;

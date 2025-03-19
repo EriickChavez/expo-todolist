@@ -1,15 +1,12 @@
 import React, { useCallback, useEffect } from "react";
-import DraggableFlatList, {
-  RenderItemParams,
-} from "react-native-draggable-flatlist";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { useDispatch } from "react-redux";
-import { useNavigation } from "@react-navigation/native";
 import { Task } from "@/interfaces/tasks";
 import TaskSlice from "@/store/Slice/TaskSlice";
-import { SCREEN_NAME } from "@/enums/Screens";
 import EmptyTaskList from "./EmptyTaskList";
 import TaskCard from "./TaskCard";
+
+import { router } from "expo-router";
 
 interface TaskListProps {
   data: Task[];
@@ -17,7 +14,6 @@ interface TaskListProps {
 
 const TaskList: React.FC<TaskListProps> = (props) => {
   const dispatch = useDispatch();
-  const navigation = useNavigation();
 
   const setDraggableData = useCallback(
     (data: Task[]) => {
@@ -54,9 +50,9 @@ const TaskList: React.FC<TaskListProps> = (props) => {
 
   const onTaskPress = useCallback(
     (task: Task) => {
-      navigation.navigate(SCREEN_NAME.ADD_TASK, { task });
+      router.navigate("/AddTaskScreen", { task });
     },
-    [navigation]
+    [router]
   );
 
   const renderItem = useCallback(
